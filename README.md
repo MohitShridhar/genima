@@ -3,7 +3,6 @@
 ### [Generative Image as Action Models](https://genima-bot.github.io)   
 [Mohit Shridhar*](https://mohitshridhar.com/), [Yat Long (Richie) Lo*](https://richielo.github.io/), [Stephen James](https://stepjam.github.io/)  
 Dyson Robot Learning Lab  
-[CoRL 2024](https://www.corl.org/)  
 
 Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations. 
 
