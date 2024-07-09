@@ -226,7 +226,7 @@ The ACT controller for Genima can be trained independently of the diffusion agen
 
 The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml).
 
-To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the TiGER repository for other baselines. 
+To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the TiGeR repository for other baselines. 
 
 ### 5. Evaluate pre-trained Genima
 
@@ -306,11 +306,15 @@ It depends on the number, complexity, and diversity of tasks. Start with 50 demo
 
 **Is multi-gpu training supported?**  
 
-Yes for the diffusion agent, since it's based off [HF diffusers](https://huggingface.co/docs/diffusers/en/index). But no for the controller, since TiGER only supports single-GPU training. You can use other ACT implementations to train the controller. 
+Yes for the diffusion agent, since it's based off [HF diffusers](https://huggingface.co/docs/diffusers/en/index). But no for the controller, since TiGeR only supports single-GPU training. You can use other ACT implementations to train the controller. 
 
 **Will the real-robot code be released?**
 
 The Genima part of the real-robot code is identical to this repo. You just need format your dataset into the RLBench dataset format. 
+
+**Will the real-world checkpoints and data be released?**
+
+No. Without our particular camera setup, these real-world datasets and checkpoints are not useable. 
 
 ## Hardware Requirements
 
@@ -327,10 +331,15 @@ Only the diffusion agent training requires GPUs with larger VRAMs. Both inferenc
 
 - Initial code release. 
 
+## Todos
+- [ ] Support [LeRobot's ACT](https://huggingface.co/lerobot) for the controller (needs FiLM conditioning)
+- [ ] Host dataset on HF
+- [ ] Host pre-trained checkpoints on HF
+
 ## Licenses
 - [Genima License (Apache 2.0)](LICENSE) - This repo
-- [Huggingface Diffusers License (Apache 2.0)](https://github.com/huggingface/diffusers?tab=Apache-2.0-1-ov-file#readme) - Fine-tuning stable diffusion code
-- [TiGER License (MIT)](https://github.com/dyson-ai/tiger/blob/main/LICENSE) - ACT implementation and training code
+- [HuggingFace Diffusers License (Apache 2.0)](https://github.com/huggingface/diffusers?tab=Apache-2.0-1-ov-file#readme) - Fine-tuning stable diffusion code
+- [TiGeR License (MIT)](https://github.com/dyson-ai/tiger/blob/main/LICENSE) - ACT implementation and training code
 - [ACT License (MIT)](https://github.com/tonyzhaozh/act?tab=MIT-1-ov-file#readme) - Original ACT code
 - [MT-ACT License (MIT)](https://github.com/robopen/roboagent/) - Original multi-task ACT code
 - [RLBench Licence](https://github.com/stepjam/RLBench/blob/master/LICENSE) - Simulator
