@@ -45,7 +45,7 @@ python train_controlnet_sdxl_genima.py
      --resolution=512 \
      --learning_rate=1e-5 \
      --data_path='/tmp/train_data_rgb_rendered/' \
-     --validation_images_path '/data/moshridhar/papers/genima/code_release/data/rb_data_rgb_rendered'       \
+     --validation_images_path '/tmp/train_data_rgb_rendered/'       \
      --validation_prompt 'a robot manipulator taking the lid off a saucepan from wrist perspective'   \
      --train_batch_size=2       \
      --checkpoints_total_limit=2       \
@@ -79,7 +79,7 @@ python train_instruct_pix2pix_genima.py
      --resolution=512 \
      --learning_rate=1e-5 \
      --data_path='/tmp/train_data_rgb_rendered/' \
-     --validation_images_path '/data/moshridhar/papers/genima/code_release/data/rb_data_rgb_rendered'       \
+     --validation_images_path '/tmp/train_data_rgb_rendered/'       \
      --validation_prompt 'a robot manipulator taking the lid off a saucepan from wrist perspective'   \
      --train_batch_size=4       \
      --checkpoints_total_limit=2       \
