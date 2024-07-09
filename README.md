@@ -349,7 +349,6 @@ Special thanks to Huggingface for [Diffusers](https://github.com/huggingface/dif
 @inproceedings{shridhar2024genima,
   title     = {Generative Image as Action Models},
   author    = {Shridhar, Mohit and Lo, Yat Long and James, Stepheb},
-  booktitle = {Proceedings of the 6th Conference on Robot Learning (CoRL)},
   year      = {2024},
 }
 ```
