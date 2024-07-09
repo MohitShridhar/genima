@@ -1,0 +1,40 @@
+# Pre-trained checkpoints
+controller_ckpt: /tmp/controller_ckpt/
+
+# Evaluation settings
+task: 'take_lid_off_saucepan'
+episode_length: 200
+eval_type: 'latest' # or 'last_three'
+train_cfg_path: ${controller_ckpt}/config.yaml
+num_eval_episodes: 50
+dataset_root: '/tmp/rlbench_dataset'
+save_video: False
+video_fps: 30
+headless: True
+save_gen_image: False
+save_input_image: False
+save_image_path: '/tmp/'
+device: 'cuda'
+safety_checker: null
+
+# Colosseum settings
+colosseum_use: false
+colosseum_task_config: 'cfgs/colosseum/random_object_color.yaml'
+
+# Inference parameters
+execution_horizon: 20
+temporal_agg: False
+image_resolution: 512
+
+# Hydra
+hydra:
+  searchpath:
+    - pkg://tiger.cfgs
+
+# Wandb
+wandb:
+  use: false
+  project: genima
+  entity: rll
+  name: eval_act
+  dir: '/tmp/wandb'

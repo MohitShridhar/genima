@@ -1,0 +1,58 @@
+# Pre-trained checkpoints
+diffusion_ckpt: '/tmp/diffusion_ckpt/'
+controller_ckpt: /tmp/controller_ckpt/
+sd_ckpt: 'stabilityai/sd-turbo'
+
+# Evaluation settings
+task: 'take_lid_off_saucepan'
+episode_length: 200
+eval_type: 'latest' # or 'last_three'
+train_cfg_path: ${controller_ckpt}/config.yaml
+num_eval_episodes: 50
+dataset_root: '/tmp/rlbench_dataset'
+save_video: False
+video_fps: 30
+headless: True
+save_gen_image: False
+save_input_image: False
+save_image_path: '/tmp/'
+device: 'cuda'
+safety_checker: null
+
+# Colosseum settings
+colosseum_use: false
+colosseum_task_config: 'cfgs/colosseum/random_object_color.yaml'
+
+# Inference parameters
+diffusion_agent:
+  _target_: 'agent.SDControlNetAgent'
+execution_horizon: 20
+num_diffusion_steps: 10
+guidance_scale: 0.0
+diffusion_seed: 2
+temporal_agg: False
+image_resolution: 512
+show_diffusion_progress: False
+
+# Speed-up optimizations
+enable_xformers_memory_efficient_attention: True
+torch_compile: False
+channel_last: False
+allow_tf32: False
+autoencoder: ''
+vae_slicing: False
+upcast_vae: False
+fused_projections: False
+
+# Hydra
+hydra:
+  searchpath:
+    - pkg://tiger.cfgs
+
+# Wandb
+wandb:
+  use: false
+  project: genima
+  entity: rll
+  name: eval_genima
+  dir: '/tmp/wandb'

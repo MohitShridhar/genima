@@ -1,0 +1,42 @@
+# Global configs that apply to all tasks
+defaults:
+  - tiger_config
+  - _self_
+  - override method: genima_act
+  - override hydra/launcher: joblib
+
+work_dir: null
+pixels: true
+visual_observation_shape: [256, 256]
+num_train_epochs: 1000
+checkpoint_every: 10
+num_checkpoints: 3
+experiment_name: genima_controller
+replay_size_before_train: 0 # This is needed to avoid additional demos being loaded
+
+wandb:
+  use: false
+  project: genima
+  entity: rll
+  name: train_act
+  dir: '/tmp/wandb'
+
+env:
+  tasks: ['take_lid_off_saucepan','open_drawer']
+  headless: true
+  colosseum_use: false
+  colosseum_task_config: 'cfgs/colosseum/random_object_color.yaml'
+  renderer: opengl
+
+tb:  # TensorBoard
+  use: false
+  log_dir: /tmp/tiger_tb_logs
+
+hydra:
+  run:
+    dir: ./exp_local/${now:%Y.%m.%d}/${wandb.name}
+  sweep:
+    dir: ./exp_local/${now:%Y.%m.%d}/${wandb.name}
+    subdir: ${hydra.job.num}
+  searchpath:
+    - pkg://tiger.cfgs

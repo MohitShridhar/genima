@@ -1,0 +1,39 @@
+# @package _global_
+
+method:
+  _target_: method.genima_act.GenimaACT
+  device: 'cpu'
+  is_rl: False
+  lr: 5.0e-05
+  lr_backbone: 1.0e-05
+  weight_decay: 0.0001
+  num_train_steps: 200000
+  adaptive_lr: false
+  actor_grad_clip: null
+  actor_model:
+    _target_: method.genima_act.GenimaMVTransformer
+    _partial_: true
+    input_shape: ???
+    hidden_dim: 256
+    enc_layers: 4
+    dec_layers: 6
+    dim_feedforward: 2048
+    dropout: 0.1
+    nheads: 8
+    num_queries: ${action_sequence}
+    pre_norm: false
+    state_dim: 8
+    action_dim: 8
+    use_lang_cond: True
+    data_augmentation: true
+  encoder_model:
+    _target_: tiger.method.act.ImageEncoderACT
+    _partial_: true
+    input_shape: ???
+    hidden_dim: 256
+    position_embedding: "sine"
+    lr_backbone: ${method.lr_backbone}
+    masks: False
+    backbone: "resnet18"
+    dilation: False
+    use_lang_cond: true
