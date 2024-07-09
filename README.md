@@ -79,8 +79,8 @@ python eval_genima.py \
      save_gen_images=False \
      num_diffusion_steps=5 \
      execution_horizon=20 \
-     save_video=True \
-     wandb.use=True \
+     save_video=False \
+     wandb.use=False \
      eval_type=latest \
      headless=False
 ```
@@ -96,9 +96,9 @@ You can evaluate the same Genima agent on other tasks by generating a val set fo
 
 We provide pre-trained checkpoints for RLBench agents:
 
-##### [25 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/25_tasks.zip)
+#### [25 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/25_tasks.zip)
 
-##### [3 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/3_tasks.zip) - from ablations
+#### [3 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/3_tasks.zip) - from ablations
 
 See [quickstart](#quickstart) on how to evaluate these checkpoints. 
 
