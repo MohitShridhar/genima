@@ -44,3 +44,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry-exec-plugin.commands]
 rlbench = "./scripts/install_rlbench.sh"
 download_textures = "./scripts/download_mil_textures.sh"
+quick_start = "./scripts/download_quickstart.sh"

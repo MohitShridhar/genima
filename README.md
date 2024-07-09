@@ -1,6 +1,6 @@
 # GENIMA
 
-### [Generative Image as Action Models](https://genima-bot.github.io)   
+### [Generative Image as Action Models](https://genima-robot.github.io)   
 [Mohit Shridhar*](https://mohitshridhar.com/), [Yat Long (Richie) Lo*](https://richielo.github.io/), [Stephen James](https://stepjam.github.io/)  
 Dyson Robot Learning Lab  
 
@@ -8,7 +8,7 @@ Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations.
 
 ![](media/teaser_v1.gif)
 
-The best entry-point for learning how to fine-tune Stable Diffusion to draw actions is [this Colab Tutorial](). The rest of this repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-bot.github.io](https://genima-bot.github.io)
+This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io)
 
 *Note: This is not an official Dyson product.*
 
@@ -41,19 +41,78 @@ poetry install                                    # install dependencies
 
 ## Quickstart
 
+This is a quick tutorial on evaluating a pre-trained Genima agent.  
+
+Download the [pre-trained checkpoint]() trained on 25 RLBench tasks with 50 demos per task:
+```bash
+cd genima
+poetry exec quick_start
+```
+
+Generate a small `val` set of 10 episodes for `open_box` inside `/tmp/val_data`:
+
+```bash
+mkdir /tmp/val_data
+cd genima/rlbench/tools
+python dataset_generator.py \
+     --save_path=/tmp/val_data \
+     --tasks=open_box \
+     --image_size=256,256 \
+     --renderer=opengl \
+     --episodes_per_task=10 \
+     --variations=1 \
+     --processes=1 \
+     --arm_max_velocity 2.0 \
+     --arm_max_acceleration 8.0
+```
+
+Evaluate the pre-trained Genima agent:
+
+```bash
+cd genima/controller
+python eval_genima.py \
+     task=open_box \
+     dataset_root=/tmp/val_data \
+     diffusion_ckpt=../ckpts/25_tasks/diffusion_sdturbo_R256x4_tiled \
+     controller_ckpt=../ckpts/25_tasks/controller_act \
+     num_eval_episodes=10 \
+     save_gen_images=False \
+     num_diffusion_steps=5 \
+     execution_horizon=20 \
+     save_video=True \
+     wandb.use=True \
+     eval_type=latest \
+     headless=False
+```
+
+If you are on a headless machine, turn off RLBench visualization with `headless=True`. You can save the generated target images to `/tmp/` by setting `save_gen_images=True`. 
+
+You can evaluate the same Genima agent on other tasks by generating a val set for that task.  
 
 
 ## Download
 
 ### Pre-trained checkpoints
 
-### Datasets
+We provide pre-trained checkpoints for RLBench agents:
+
+##### [25 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/25_tasks.zip)
+
+##### [3 Task Genima](https://github.com/MohitShridhar/genima/releases/download/v1.0.0/3_tasks.zip) - from ablations
+
+See [quickstart](#quickstart) on how to evaluate these checkpoints. 
+
+### RLBench datasets
+
+See this [GDrive folder]() with `train` and `val` zips for 25 tasks. 
 
 ## Training Guide
 
 This guide covers how to train Genima from scratch.
 
-### 1. Generate RLBench dataset
+### 1. Generate RLBench datasets
+
+Use the `dataset_generator.py` tool to generate datasets:
 ```bash
 cd rlbench/tools
 
@@ -84,6 +143,10 @@ python dataset_generator.py \
 ```
 
 **Note:** If you have old RLBench datasets, they won't work with Genima. You need [RLBench](https://github.com/stepjam/RLBench) `master` up until [this commit](https://github.com/stepjam/RLBench/commit/4c35bc6351986a1baa6c97ab7b8fcf99395a6a17) to save joint poses.
+
+OR  
+
+Download pre-generated datasets from [GDrive](https://rclone.org/drive/) using rclone. 
 
 ### 2. Render joints as spheres
 
