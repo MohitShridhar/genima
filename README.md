@@ -12,7 +12,7 @@ This repo is for reproducing the RLBench results from the paper. For the latest 
 
 *Note: This is not an official Dyson product.*  
 
-:warning: Warning: The code release is in flux, so some things might be broken.  
+:warning: Warning: The code release is in flux, so some things might be broken. 
 
 ## Guides
 
