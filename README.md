@@ -104,7 +104,7 @@ See [quickstart](#quickstart) on how to evaluate these checkpoints.
 
 ### RLBench datasets
 
-See this [GDrive folder]() with `train` and `val` zips for 25 tasks. 
+TBA
 
 ## Training Guide
 
@@ -144,9 +144,6 @@ python dataset_generator.py \
 
 **Note:** If you have old RLBench datasets, they won't work with Genima. You need [RLBench](https://github.com/stepjam/RLBench) `master` up until [this commit](https://github.com/stepjam/RLBench/commit/4c35bc6351986a1baa6c97ab7b8fcf99395a6a17) to save joint poses.
 
-OR  
-
-Download pre-generated datasets from [GDrive](https://rclone.org/drive/) using rclone. 
 
 ### 2. Render joints as spheres
 
@@ -202,7 +199,7 @@ python train_controlnet_genima.py
      --resume_from_checkpoint 'latest'
 ```
 
-Monitor the training on wandb to check the quality of the generated targets. If the spheres are blurry, at the wrong location, or have the wrong color, then the model is not trained enough. You need train between 100-200 epochs for good results. 
+Monitor the training on wandb to check the quality of the generated targets. If the spheres are blurry, at the wrong location, or have the wrong color, then the model is not trained enough. You need train between 100-200 epochs for good results. For multi-task training just provide a comma-separated list `--tasks 'take_lid_off_saucepan,open_box'`.
 
 
 ### 4. Train an ACT controller to follow spheres
@@ -224,7 +221,7 @@ python train_act.py \
 
 The ACT controller for Genima can be trained independently of the diffusion agent. If you have sufficient compute, you train both the diffusion agent and controller simultaneously.  
 
-The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml).
+The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml). For multi-task training just provide a comma-separated list `env.tasks=[take_lid_off_saucepan,open_box]'`. 
 
 To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the TiGeR repository for other baselines. 
 
