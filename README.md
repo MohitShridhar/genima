@@ -8,7 +8,7 @@ Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations.
 
 ![](media/teaser_v1.gif)
 
-This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io)
+This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io). 
 
 *Note: This is not an official Dyson product.*  
 
@@ -41,7 +41,7 @@ poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
 ```
 
-Manually install TiGeR (temporary work around while TiGeR is in flux):
+Manually install TiGeR for the ACT implementation (temporary work around while TiGeR is in flux):
 ```bash
 cd <install_dir>
 git clone https://github.com/stepjam/tiger.git
