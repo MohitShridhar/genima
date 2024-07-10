@@ -3,16 +3,16 @@ from typing import List
 import warnings
 from pyrep.const import RenderMode
 
-from tiger.envs.rlbench import RLBenchEnvFactory, RLBenchEnv, ActionModeType
-from tiger.envs.rlbench import ROBOT_STATE_KEYS, _make_obs_config
-from tiger.envs.wrappers import FrameStack, ActionSequence, AppendDemoInfo, OnehotTime
-from tiger.envs.env import Demo, DemoEnv
-from tiger.utils import (
+from robobase.envs.rlbench import RLBenchEnvFactory, RLBenchEnv, ActionModeType
+from robobase.envs.rlbench import ROBOT_STATE_KEYS, _make_obs_config
+from robobase.envs.wrappers import FrameStack, ActionSequence, AppendDemoInfo, OnehotTime
+from robobase.envs.env import Demo, DemoEnv
+from robobase.utils import (
     observations_to_action_with_onehot_gripper_nbp,
     observations_to_timesteps,
 )
-from tiger.utils import DemoStep, rescale_demo_actions
-from tiger.envs.rlbench import _name_to_task_class
+from robobase.utils import DemoStep, rescale_demo_actions
+from robobase.envs.rlbench import _name_to_task_class
 from env.wrappers.proprio_norm_wrapper import NormProprioFromStats
 from env.wrappers.action_normalization_wrapper import JointNormalization
 from gymnasium.wrappers import TimeLimit

@@ -29,7 +29,7 @@ image_resolution: 512
 # Hydra
 hydra:
   searchpath:
-    - pkg://tiger.cfgs
+    - pkg://robobase.cfgs
 
 # Wandb
 wandb:

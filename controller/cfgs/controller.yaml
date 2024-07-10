@@ -1,6 +1,6 @@
 # Global configs that apply to all tasks
 defaults:
-  - tiger_config
+  - robobase_config
   - _self_
   - override method: genima_act
   - override hydra/launcher: joblib
@@ -30,7 +30,7 @@ env:
 
 tb:  # TensorBoard
   use: false
-  log_dir: /tmp/tiger_tb_logs
+  log_dir: /tmp/robobase_tb_logs
 
 hydra:
   run:
@@ -39,4 +39,4 @@ hydra:
     dir: ./exp_local/${now:%Y.%m.%d}/${wandb.name}
     subdir: ${hydra.job.num}
   searchpath:
-    - pkg://tiger.cfgs
+    - pkg://robobase.cfgs

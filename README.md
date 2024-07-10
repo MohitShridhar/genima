@@ -41,11 +41,11 @@ poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
 ```
 
-Manually install TiGeR for the ACT implementation (temporary work around while TiGeR is in flux):
+Manually install RoboBase for the ACT implementation (temporary work around while RoboBase is in flux):
 ```bash
 cd <install_dir>
-git clone https://github.com/stepjam/tiger.git
-cd tiger
+git clone https://github.com/stepjam/robobase.git
+cd robobase
 pip install -e .
 ```
 
@@ -233,7 +233,7 @@ The ACT controller for Genima can be trained independently of the diffusion agen
 
 The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml). For multi-task training just provide a comma-separated list `env.tasks=[take_lid_off_saucepan,open_box]'`. 
 
-To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the TiGeR repository for other baselines. 
+To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the RoboBase repository for other baselines. 
 
 ### 5. Evaluate pre-trained Genima
 
@@ -313,7 +313,7 @@ It depends on the number, complexity, and diversity of tasks. Start with 50 demo
 
 **Is multi-gpu training supported?**  
 
-Yes for the diffusion agent, since it's based off [HF diffusers](https://huggingface.co/docs/diffusers/en/index). But no for the controller, since TiGeR only supports single-GPU training. You can use other ACT implementations to train the controller. 
+Yes for the diffusion agent, since it's based off [HF diffusers](https://huggingface.co/docs/diffusers/en/index). But no for the controller, since RoboBase only supports single-GPU training. You can use other ACT implementations to train the controller. 
 
 **Will the real-robot code be released?**
 
@@ -346,7 +346,7 @@ Only the diffusion agent training requires GPUs with larger VRAMs. Both inferenc
 ## Licenses
 - [Genima License (Apache 2.0)](LICENSE) - This repo
 - [HuggingFace Diffusers License (Apache 2.0)](https://github.com/huggingface/diffusers?tab=Apache-2.0-1-ov-file#readme) - Fine-tuning stable diffusion code
-- [TiGeR License (MIT)](https://github.com/dyson-ai/tiger/blob/main/LICENSE) - ACT implementation and training code
+- [RoboBase License (MIT)](https://github.com/dyson-ai/robobase/blob/main/LICENSE) - ACT implementation and training code
 - [ACT License (MIT)](https://github.com/tonyzhaozh/act?tab=MIT-1-ov-file#readme) - Original ACT code
 - [MT-ACT License (MIT)](https://github.com/robopen/roboagent/) - Original multi-task ACT code
 - [RLBench Licence](https://github.com/stepjam/RLBench/blob/master/LICENSE) - Simulator

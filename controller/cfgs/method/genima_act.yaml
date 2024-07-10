@@ -27,7 +27,7 @@ method:
     use_lang_cond: True
     data_augmentation: true
   encoder_model:
-    _target_: tiger.method.act.ImageEncoderACT
+    _target_: robobase.method.act.ImageEncoderACT
     _partial_: true
     input_shape: ???
     hidden_dim: 256

@@ -1,4 +1,4 @@
-"""Launch file for running experiments in TiGeR."""
+"""Launch file for running experiments in RoboBase."""
 
 import os
 import sys
@@ -14,11 +14,11 @@ from functools import partial
 import hydra
 from hydra.core.hydra_config import HydraConfig
 from omegaconf import DictConfig, OmegaConf, open_dict
-from tiger import utils
-from tiger.logger import Logger
-from tiger.envs.env import EnvFactory
-from tiger.replay_buffer.replay_buffer import ReplayBuffer
-from tiger.workspace import Workspace, _worker_init_fn
+from robobase import utils
+from robobase.logger import Logger
+from robobase.envs.env import EnvFactory
+from robobase.replay_buffer.replay_buffer import ReplayBuffer
+from robobase.workspace import Workspace, _worker_init_fn
 from env.rlbench import GenimaRLBenchFactory
 from utils.dataloader import EpochReplayBuffer
 from torch.utils.data import DataLoader
@@ -167,7 +167,7 @@ class ControllerWorkspace(Workspace):
 
         # RLBench doesn't like it when we import cv2 before it, so moving
         # import here.
-        from tiger.video import VideoRecorder
+        from robobase.video import VideoRecorder
 
         self.eval_video_recorder = VideoRecorder(
             (self.work_dir / "eval_videos") if self.cfg.log_eval_video else None

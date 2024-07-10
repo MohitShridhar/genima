@@ -5,12 +5,12 @@ from rlbench.action_modes.action_mode import MoveArmThenGripper
 from rlbench.action_modes.arm_action_modes import JointPosition
 from rlbench.action_modes.arm_action_modes import EndEffectorPoseViaPlanning
 from rlbench.action_modes.gripper_action_modes import Discrete
-from tiger.envs.rlbench import ROBOT_STATE_KEYS
-from tiger.envs.rlbench import TASK_TO_LOW_DIM_SIM, _get_cam_observation_elements
-from tiger.envs.rlbench import ActionModeType
-from tiger.utils import DemoStep
-from tiger.envs.env import DemoEnv
-from tiger.replay_buffer.replay_buffer import ReplayBuffer
+from robobase.envs.rlbench import ROBOT_STATE_KEYS
+from robobase.envs.rlbench import TASK_TO_LOW_DIM_SIM, _get_cam_observation_elements
+from robobase.envs.rlbench import ActionModeType
+from robobase.utils import DemoStep
+from robobase.envs.env import DemoEnv
+from robobase.replay_buffer.replay_buffer import ReplayBuffer
 
 import numpy as np
 from gymnasium import spaces
@@ -201,7 +201,7 @@ def _get_action_mode(action_mode_type: ActionModeType):
                 EndEffectorPoseViaPlanning(), Discrete()
             )
 
-        # Overrides Tiger's Delta Joint Position mode with Absolute Joint Position mode
+        # Overrides RoboBase's Delta Joint Position mode with Absolute Joint Position mode
         case ActionModeType.JOINT_POSITION:
 
             class CustomMoveArmThenGripper(MoveArmThenGripper):

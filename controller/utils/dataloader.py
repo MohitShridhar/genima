@@ -1,8 +1,8 @@
 import torch
 from torch.utils.data import Dataset
 import numpy as np
-from tiger.replay_buffer.uniform_replay_buffer import UniformReplayBuffer, episode_len
-from tiger.replay_buffer.uniform_replay_buffer import (
+from robobase.replay_buffer.uniform_replay_buffer import UniformReplayBuffer, episode_len
+from robobase.replay_buffer.uniform_replay_buffer import (
     REWARD,
     ACTION,
     TERMINAL,

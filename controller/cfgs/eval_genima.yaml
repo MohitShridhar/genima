@@ -47,7 +47,7 @@ fused_projections: False
 # Hydra
 hydra:
   searchpath:
-    - pkg://tiger.cfgs
+    - pkg://robobase.cfgs
 
 # Wandb
 wandb:

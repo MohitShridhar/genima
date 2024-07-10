@@ -8,10 +8,10 @@ import time
 import torch
 import numpy as np
 
-import tiger.utils as tiger_utils
-from tiger.workspace import Workspace
-from tiger.envs.env import EnvFactory
-from tiger.logger import Logger
+import robobase.utils as robobase_utils
+from robobase.workspace import Workspace
+from robobase.envs.env import EnvFactory
+from robobase.logger import Logger
 from env.rlbench import GenimaRLBenchFactory
 
 
@@ -35,7 +35,7 @@ class GenimaEvalWorkspace(Workspace):
         )
         print(f"workspace: {self.work_dir}")
 
-        tiger_utils.set_seed_everywhere(self.train_cfg.seed)
+        robobase_utils.set_seed_everywhere(self.train_cfg.seed)
         self.device = torch.device(self.eval_cfg.device)
 
         # create logger
@@ -63,7 +63,7 @@ class GenimaEvalWorkspace(Workspace):
 
         # RLBench doesn't like it when we import cv2 before it, so moving
         # import here.
-        from tiger.video import VideoRecorder
+        from robobase.video import VideoRecorder
 
         self.eval_video_recorder = VideoRecorder(
             Path(os.path.join(self.eval_cfg.controller_ckpt, "eval_videos"))
@@ -71,7 +71,7 @@ class GenimaEvalWorkspace(Workspace):
             else None
         )
 
-        self._timer = tiger_utils.Timer()
+        self._timer = robobase_utils.Timer()
         self._pretrain_step = 0
         self._main_loop_iterations = 0
         self._global_env_episode = 0
@@ -114,7 +114,7 @@ class GenimaEvalWorkspace(Workspace):
 
             run_episode, run_total_reward = 0, 0
             timings = {"gen_time": [], "control_time": []}
-            eval_until_episode = tiger_utils.Until(self.eval_cfg.num_eval_episodes)
+            eval_until_episode = robobase_utils.Until(self.eval_cfg.num_eval_episodes)
 
             while eval_until_episode(run_episode):
                 # Reset env
@@ -143,7 +143,7 @@ class GenimaEvalWorkspace(Workspace):
                 # Evaluation loop
                 while not termination:
 
-                    with torch.inference_mode(), tiger_utils.eval_mode(
+                    with torch.inference_mode(), robobase_utils.eval_mode(
                         self.controller_agent
                     ):
                         # Generate a sequence of joint-positions with the controller

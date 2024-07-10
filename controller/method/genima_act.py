@@ -1,21 +1,21 @@
 from typing import Tuple, List, Optional
-from tiger.method.act import ActBCAgent, ACTPolicy
+from robobase.method.act import ActBCAgent, ACTPolicy
 import numpy as np
 import torch
 import torch.nn as nn
-from tiger.replay_buffer.replay_buffer import ReplayBuffer
-from tiger.method.utils import (
+from robobase.replay_buffer.replay_buffer import ReplayBuffer
+from robobase.method.utils import (
     extract_from_spec,
     extract_from_batch,
     flatten_time_dim_into_channel_dim,
     stack_tensor_dictionary,
     extract_many_from_batch,
 )
-from tiger.models.multi_view_transformer import (
+from robobase.models.multi_view_transformer import (
     MultiViewTransformerEncoderDecoderACT,
     reparametrize,
 )
-from tiger.models.act.utils.misc import kl_divergence
+from robobase.models.act.utils.misc import kl_divergence
 import torchvision.transforms as transforms
 from torchvision.transforms import v2
 import torch.nn.functional as F
