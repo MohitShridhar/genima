@@ -38,7 +38,7 @@ poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
 ```
 
-Manually install RoboBase (containing the ACT implementation) for debugging purposes:
+Manually install RoboBase (which contains the ACT implementation) for debugging purposes:
 ```bash
 cd <install_dir>
 git clone https://github.com/robobase-org/robobase.git
