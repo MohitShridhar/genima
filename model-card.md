@@ -6,7 +6,7 @@ Following [Model Cards for Model Reporting (Mitchell et al.)](https://arxiv.org/
 
 
 ### Overview
-- Developed by Shridhar et al. at the Dyson Robot Learning Lab. Genima is an end-to-end behavior cloning agent that fine-tunes Stable Diffusion to draw joint-actions on observations. An ACT-based controller is trained from scratch to map target images into a sequence of joint-actions.  
+- Developed by Shridhar et al. Genima is an end-to-end behavior cloning agent that fine-tunes Stable Diffusion to draw joint-actions on observations. An ACT-based controller is trained from scratch to map target images into a sequence of joint-actions.  
 - Architecture: Stable Diffusion uses UNet. ACT uses ResNet-18 vision encoders and Transformer action decoders. 
 - Stable Diffusion is fine-tuned to draw joint-actions for tabletop manipulation tasks. ACT is trained with joint targets and random backgrounds.
 

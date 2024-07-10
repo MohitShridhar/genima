@@ -2808,7 +2808,6 @@ torch = ">1.13"
 wandb = "<=0.15.12"
 
 [package.extras]
-bigym = ["bigym @ git+ssh://git@stash.dyson.global.corp:7999/las/bigym.git@2.8.0"]
 d4rl = ["cython (<3)", "d4rl @ git+https://github.com/Farama-Foundation/d4rl@master", "gym"]
 dev = ["mvp @ git+https://github.com/ir413/mvp", "pre-commit", "pytest"]
 dmc = ["dm_control"]
