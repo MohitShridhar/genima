@@ -289,7 +289,7 @@ Select from 6 config files for `colosseum_task_config`:
 
 ## Notebooks
 
-- [Colab Tutorial](): How to generate the dataset and train the diffusion agent.
+- [Colab Tutorial (soon)](): How to generate the dataset and train the diffusion agent.
 - [Dataset Visualizer](notebooks/render.ipynb): Looks into the rendered joint-target datasets.  
 
 ## Disclaimers and Limitations
