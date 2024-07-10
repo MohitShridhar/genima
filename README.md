@@ -343,7 +343,6 @@ Only the diffusion agent training requires GPUs with larger VRAMs. Both inferenc
 ## Licenses
 - [Genima License (Apache 2.0)](LICENSE) - This repo
 - [HuggingFace Diffusers License (Apache 2.0)](https://github.com/huggingface/diffusers?tab=Apache-2.0-1-ov-file#readme) - Fine-tuning stable diffusion code
-- [RoboBase License (MIT)](https://github.com/robobase/robobase/blob/main/LICENSE) - ACT implementation and training code
 - [ACT License (MIT)](https://github.com/tonyzhaozh/act?tab=MIT-1-ov-file#readme) - Original ACT code
 - [MT-ACT License (MIT)](https://github.com/robopen/roboagent/) - Original multi-task ACT code
 - [RLBench Licence](https://github.com/stepjam/RLBench/blob/master/LICENSE) - Simulator
