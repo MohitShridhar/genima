@@ -50,7 +50,7 @@ pip install -e .
 
 This is a quick tutorial on evaluating a pre-trained Genima agent.  
 
-Download the [pre-trained checkpoint]() trained on 25 RLBench tasks with 50 demos per task:
+Download the [pre-trained checkpoint](https://github.com/MohitShridhar/genima/releases/download/1.0.0/25_tasks.zip) trained on 25 RLBench tasks with 50 demos per task:
 ```bash
 cd genima
 poetry exec quick_start
@@ -168,7 +168,7 @@ python render_data.py \
      action_horizon=20 \
      num_processes=5
 ```
-By default, two dataset folders would be generated: `rlbench_data_rgb_rendered` with observations and joint targets to train the diffusion agent, and `rlbench_data_rnd_bg` with random backgrounds and joint targets to train the controller. See the sample [notebook]() for visual illustrations of the rendered data.
+By default, two dataset folders would be generated: `rlbench_data_rgb_rendered` with observations and joint targets to train the diffusion agent, and `rlbench_data_rnd_bg` with random backgrounds and joint targets to train the controller. See the sample [notebook](notebooks/render.ipynb) for visual illustrations of the rendered data.
 
 ### 3. Fine-tune Stable Diffusion with ControlNet to draw spheres
 
