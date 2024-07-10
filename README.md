@@ -2,15 +2,12 @@
 
 ### [Generative Image as Action Models](https://genima-robot.github.io)   
 [Mohit Shridhar*](https://mohitshridhar.com/), [Yat Long (Richie) Lo*](https://richielo.github.io/), [Stephen James](https://stepjam.github.io/)  
-Dyson Robot Learning Lab  
 
 Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations. 
 
 ![](media/teaser_v1.gif)
 
 This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io). 
-
-*Note: This is not an official Dyson product.*  
 
 :warning: Warning: The code release is in flux, so some things might be broken. 
 
@@ -41,10 +38,10 @@ poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
 ```
 
-Manually install RoboBase for the ACT implementation (temporary work around while RoboBase is in flux):
+Manually install RoboBase (containing the ACT implementation) for debugging purposes:
 ```bash
 cd <install_dir>
-git clone https://github.com/stepjam/robobase.git
+git clone https://github.com/robobase/robobase.git
 cd robobase
 pip install -e .
 ```
@@ -346,7 +343,7 @@ Only the diffusion agent training requires GPUs with larger VRAMs. Both inferenc
 ## Licenses
 - [Genima License (Apache 2.0)](LICENSE) - This repo
 - [HuggingFace Diffusers License (Apache 2.0)](https://github.com/huggingface/diffusers?tab=Apache-2.0-1-ov-file#readme) - Fine-tuning stable diffusion code
-- [RoboBase License (MIT)](https://github.com/dyson-ai/robobase/blob/main/LICENSE) - ACT implementation and training code
+- [RoboBase License (MIT)](https://github.com/robobase/robobase/blob/main/LICENSE) - ACT implementation and training code
 - [ACT License (MIT)](https://github.com/tonyzhaozh/act?tab=MIT-1-ov-file#readme) - Original ACT code
 - [MT-ACT License (MIT)](https://github.com/robopen/roboagent/) - Original multi-task ACT code
 - [RLBench Licence](https://github.com/stepjam/RLBench/blob/master/LICENSE) - Simulator

@@ -2,7 +2,7 @@
 name = "genima"
 version = "0.1.0"
 description = "Generative Image as Action Models"
-authors = ["Mohit Shridhar <mohit.shridhar@dyson.com>", "Yat Long (Richie), Lo <richie.lo@dyson.com>", "Stephen James <stephen.james@dyson.com>"]
+authors = ["Mohit Shridhar <mohit.appi@gmail.com>", "Yat Long (Richie), Lo <yatlonglorichie@gmail.com>", "Stephen James <stepjamuk@gmail.com>"]
 readme = "README.md"
 package-mode = false
 
