@@ -10,7 +10,9 @@ Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations.
 
 This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io)
 
-*Note: This is not an official Dyson product.*
+*Note: This is not an official Dyson product.*  
+
+:warning: Warning: The code release is in flux, so some things might be broken.  
 
 ## Guides
 
