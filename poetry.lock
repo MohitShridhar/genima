@@ -2182,10 +2182,6 @@ all = ["imageio", "ipywidgets", "matplotlib", "tqdm (>4.29.0)"]
 dev = ["flake8", "usort"]
 implicitron = ["accelerate", "hydra-core (>=1.1)", "lpips", "matplotlib", "sqlalchemy (>=2.0)", "tqdm (>4.29.0)", "visdom"]
 
-[package.source]
-type = "url"
-url = "https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu118_pyt201/pytorch3d-0.7.4-cp310-cp310-linux_x86_64.whl"
-
 [[package]]
 name = "pytz"
 version = "2024.1"
@@ -2793,15 +2789,6 @@ files = [
 [package.extras]
 tests = ["pytest", "pytest-cov"]
 
-[[package]]
-name = "tiger"
-version = "5.9.2"
-description = ""
-optional = false
-python-versions = ">=3.10"
-files = []
-develop = false
-
 [package.dependencies]
 diffusers = "0.29.0"
 einops = "*"
@@ -2826,12 +2813,6 @@ d4rl = ["cython (<3)", "d4rl @ git+https://github.com/Farama-Foundation/d4rl@mas
 dev = ["mvp @ git+https://github.com/ir413/mvp", "pre-commit", "pytest"]
 dmc = ["dm_control"]
 rlbench = ["rlbench @ git+https://git@github.com/stepjam/RLBench.git@f2c625fde9783702938de4e8df981a8f4941da26"]
-
-[package.source]
-type = "git"
-url = "ssh://git@stash.dyson.global.corp:7999/las/tiger.git"
-reference = "652f7a10a644aee9c7c9ef43e67aa5afcb08bc6b"
-resolved_reference = "652f7a10a644aee9c7c9ef43e67aa5afcb08bc6b"
 
 [[package]]
 name = "timm"

@@ -41,6 +41,14 @@ poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
 ```
 
+Manually install TiGeR (temporary work around while TiGeR is in flux):
+```bash
+cd <install_dir>
+git clone https://github.com/stepjam/tiger.git
+cd tiger
+pip install -e .
+```
+
 ## Quickstart
 
 This is a quick tutorial on evaluating a pre-trained Genima agent.  

@@ -28,7 +28,6 @@ wandb = "0.14.2"
 tqdm = "^4.66.4"
 graphql-core = "2.0"
 accelerate = "0.25.0"
-tiger = {git = "ssh://github.com/stepjam/tiger.git"}
 clip = {git = "https://github.com/openai/CLIP.git"}
 colosseum = {git = "https://github.com/robot-colosseum/robot-colosseum.git", rev = "9141099aedb7bd31c3b1d090957f73969b4de4cf"}
 
