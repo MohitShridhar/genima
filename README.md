@@ -114,7 +114,7 @@ See [quickstart](#quickstart) on how to evaluate these checkpoints.
 
 ### RLBench datasets
 
-TBA
+TBD
 
 ## Training Guide
 
