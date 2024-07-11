@@ -154,7 +154,7 @@ python dataset_generator.py \
 
 ### 2. Render joints as spheres
 
-To draw actions in your rlbench dataset, you need to provide paths to your rlbench dataset and random textures:
+To render actions, provide paths to your RLBench dataset and random textures:
 ```bash
 # downloads textures for random backgrounds
 poetry exec download_textures
@@ -168,7 +168,7 @@ python render_data.py \
      action_horizon=20 \
      num_processes=5
 ```
-By default, two dataset folders would be generated: `rlbench_data_rgb_rendered` with observations and joint targets to train the diffusion agent, and `rlbench_data_rnd_bg` with random backgrounds and joint targets to train the controller. See the sample [notebook](notebooks/render.ipynb) for visual illustrations of the rendered data.
+By default, two dataset folders are generated: `rlbench_data_rgb_rendered` with observations and joint targets to train the diffusion agent, and `rlbench_data_rnd_bg` with random backgrounds and joint targets to train the controller. See the sample [notebook](notebooks/render.ipynb) for visual illustrations of the rendered data.
 
 ### 3. Fine-tune Stable Diffusion with ControlNet to draw spheres
 
@@ -302,7 +302,7 @@ Select from 6 config files for `colosseum_task_config`:
 
 **How long should I train for?**
 
-100-200 epochs for the diffusion agent. 1000 epochs for the controller. 
+100-200 epochs for the diffusion agent. 1000 epochs for the controller.  
 
 **How many training demos do I need?**
 
