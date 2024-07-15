@@ -358,10 +358,11 @@ Special thanks to Huggingface for [Diffusers](https://github.com/huggingface/dif
 
 **Genima**
 ```
-@inproceedings{shridhar2024genima,
-  title     = {Generative Image as Action Models},
-  author    = {Shridhar, Mohit and Lo, Yat Long and James, Stephen},
-  year      = {2024},
+@article{shridhar2024generative,
+  title={Generative Image as Action Models},
+  author={Shridhar, Mohit and Lo, Yat Long and James, Stephen},
+  journal={arXiv preprint arXiv:2407.07875},
+  year={2024}
 }
 ```
 
