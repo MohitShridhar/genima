@@ -219,7 +219,7 @@ python train_act.py \
      env.dataset_root=/tmp/train_data_rnd_bg/ \
      work_dir=/tmp/controller \
      demos=25 \
-     env.tasks=[take_lid_off_saucepan] \
+     env.train_tasks=[take_lid_off_saucepan] \
      num_train_epochs=1000 \
      action_sequence=20 \
      batch_size=8 \
@@ -228,7 +228,7 @@ python train_act.py \
 
 The ACT controller for Genima can be trained independently of the diffusion agent. If you have sufficient compute, you train both the diffusion agent and controller simultaneously.  
 
-The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml). For multi-task training just provide a comma-separated list `env.tasks=[take_lid_off_saucepan,open_box]'`. 
+The hyperparameters of the controller are set in [`controller/cfgs/method/genima_act.yaml`](controller/cfgs/method/genima_act.yaml). For multi-task training just provide a comma-separated list `env.train_tasks=[take_lid_off_saucepan,open_box]'`. 
 
 To train the ACT baseline, set `env.dataset_root=/tmp/train_data` to use raw RGB observations instead of target spheres with random backgrounds. See the RoboBase repository for other baselines. 
 

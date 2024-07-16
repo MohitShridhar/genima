@@ -22,7 +22,7 @@ wandb:
   dir: '/tmp/wandb'
 
 env:
-  tasks: ['take_lid_off_saucepan','open_drawer']
+  train_tasks: ['take_lid_off_saucepan','open_drawer']
   headless: true
   colosseum_use: false
   colosseum_task_config: 'cfgs/colosseum/random_object_color.yaml'
