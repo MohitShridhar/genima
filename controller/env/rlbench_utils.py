@@ -244,7 +244,7 @@ def add_demo_to_replay_buffer(wrapped_env: DemoEnv, replay_buffer: ReplayBuffer)
     for act, obs, rew, term, trunc, info, next_info in ep:
         obs_and_info = {k: v[-1] for k, v in obs.items()}  # remove temporal
         obs_and_info.update({"demo": info["demo"]})
-        replay_buffer.add(act, rew, term, trunc, **obs_and_info)
+        replay_buffer.add(obs, act, rew, term, trunc, **obs_and_info)
 
     if not is_sequential:
         final_obs = {k: v[-1] for k, v in final_obs.items()}
