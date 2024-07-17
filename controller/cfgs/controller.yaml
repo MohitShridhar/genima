@@ -28,6 +28,9 @@ env:
   colosseum_task_config: 'cfgs/colosseum/random_object_color.yaml'
   renderer: opengl
 
+replay:
+  nstep: 1
+
 tb:  # TensorBoard
   use: false
   log_dir: /tmp/robobase_tb_logs
