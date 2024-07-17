@@ -75,7 +75,7 @@ def _get_demo_fn(cfg, num_demos, demo_list):
     for attr in common_true:
         demo_state_keys.remove(attr)
 
-    for task_name in cfg.env.tasks:
+    for task_name in cfg.env.train_tasks:
         updated_env_config = _update_task_name_config(cfg, task_name)
         rlb_env = _make_env(updated_env_config, obs_config_demo)
         _, info = rlb_env.reset(robot_state_keys=demo_state_keys)
