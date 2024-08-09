@@ -223,6 +223,7 @@ python train_act.py \
      num_train_epochs=1000 \
      action_sequence=20 \
      batch_size=8 \
+     method.lr=1e-5 \
      wandb.use=true
 ```
 

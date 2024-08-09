@@ -121,7 +121,7 @@ class GenimaEvalWorkspace(Workspace):
                 obs, info = self.eval_env.reset()
 
                 # Restore initial state in evaluation episode
-                _, obs = self.eval_env.reset_to_demo(idx=run_episode)
+                _, obs = self.eval_env.unwrapped.reset_to_demo(idx=run_episode)
 
                 # Episode log placeholders
                 termination, episode_step = False, 0
