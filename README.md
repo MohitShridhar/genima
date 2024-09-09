@@ -2,14 +2,13 @@
 
 ### [Generative Image as Action Models](https://genima-robot.github.io)   
 [Mohit Shridhar*](https://mohitshridhar.com/), [Yat Long (Richie) Lo*](https://richielo.github.io/), [Stephen James](https://stepjam.github.io/)  
+[CoRL 2024](https://www.corl.org/)
 
 Genima fine-tunes Stable Diffusion to draw joint-actions on RGB observations. 
 
 ![](media/teaser_v1.gif)
 
 This repo is for reproducing the RLBench results from the paper. For the latest updates, see: [genima-robot.github.io](https://genima-robot.github.io). 
-
-:warning: Warning: The code release is in flux, so some things might be broken. 
 
 ## Guides
 
@@ -359,11 +358,11 @@ Special thanks to Huggingface for [Diffusers](https://github.com/huggingface/dif
 
 **Genima**
 ```
-@article{shridhar2024generative,
-  title={Generative Image as Action Models},
-  author={Shridhar, Mohit and Lo, Yat Long and James, Stephen},
-  journal={arXiv preprint arXiv:2407.07875},
-  year={2024}
+@inproceedings{shridhar2024generative,
+  title     = {Generative Image as Action Models},
+  author    = {Shridhar, Mohit and Lo, Yat Long and James, Stephen},
+  booktitle = {Proceedings of the 8th Conference on Robot Learning (CoRL)},
+  year      = {2024},
 }
 ```
 
