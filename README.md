@@ -91,7 +91,9 @@ python eval_genima.py \
      headless=False
 ```
 
-If you are on a headless machine, turn off RLBench visualization with `headless=True`. You can save the generated target images to `/tmp/` by setting `save_gen_images=True`. 
+If you are on a headless machine, turn off RLBench visualization with `headless=True`.  
+
+You can save the generated target images to `/tmp/` by setting `save_gen_images=True`. But note that saving images to disk will slow down the evaluation speed. 
 
 You can evaluate the same Genima agent on other tasks by generating a val set for that task.  
 
@@ -110,7 +112,7 @@ See [quickstart](#quickstart) on how to evaluate these checkpoints.
 
 ### RLBench datasets
 
-TBD
+No access, sorry :cry: You will need to generate them yourself. See the guide below.
 
 ## Training Guide
 
