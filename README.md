@@ -112,7 +112,7 @@ See [quickstart](#quickstart) on how to evaluate these checkpoints.
 
 ### RLBench datasets
 
-No access, sorry :cry: You will need to generate them yourself. See the guide below.
+No access, sorry :cry:. You will need to generate them yourself. See the guide below.
 
 ## Training Guide
 
