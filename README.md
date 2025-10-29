@@ -31,7 +31,7 @@ poetry self add poetry-exec-plugin                # install plugin for executabl
 poetry self update
 
 cd <install_dir>
-git clone https://github.com/MohitShrdhar/genima.git
+git clone https://github.com/MohitShridhar/genima.git
 cd genima
 poetry exec rlbench                               # install pyrep and rlbench
 poetry install                                    # install dependencies
